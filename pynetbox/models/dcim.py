@@ -97,7 +97,137 @@ class Interfaces(Record):
 
         >>> interface = nb.dcim.interfaces.get(123)
         >>> interface.trace.list()
-        {"get_facts": {"interface_list": ["ge-0/0/0"]}}
+        [[Ethernet49/1, Ethernet49/1 <> pair-1 (ports 1-2), pair-1 (ports 1-2)],
+        [port-1, port-1 <> port-1, port-1],
+        [pair-1 (ports 1-2), None, None]]
+
+        """
+        return RODetailEndpoint(
+            self,
+            "trace",
+            custom_return={
+                "dcim/cables": Cables,
+                "dcim/interfaces": Interfaces,
+                "dcim/front-ports": FrontPorts,
+                "dcim/rear-ports": RearPorts,
+            },
+        )
+
+class PowerOutlets(Record):
+    device = Devices
+
+    @property
+    def trace(self):
+        """ Represents the ``trace`` detail endpoint.
+
+        Returns a DetailEndpoint object that is the interface for
+        viewing response from the trace endpoint.
+
+        :returns: :py:class:`.DetailEndpoint`
+
+        :Examples:
+
+        >>> interface = nb.dcim.interfaces.get(123)
+        >>> interface.trace.list()
+        [[Ethernet49/1, Ethernet49/1 <> pair-1 (ports 1-2), pair-1 (ports 1-2)],
+        [port-1, port-1 <> port-1, port-1],
+        [pair-1 (ports 1-2), None, None]]
+
+        """
+        return RODetailEndpoint(
+            self,
+            "trace",
+            custom_return={
+                "dcim/cables": Cables,
+                "dcim/interfaces": Interfaces,
+                "dcim/front-ports": FrontPorts,
+                "dcim/rear-ports": RearPorts,
+            },
+        )
+
+class PowerPorts(Record):
+    device = Devices
+
+    @property
+    def trace(self):
+        """ Represents the ``trace`` detail endpoint.
+
+        Returns a DetailEndpoint object that is the interface for
+        viewing response from the trace endpoint.
+
+        :returns: :py:class:`.DetailEndpoint`
+
+        :Examples:
+
+        >>> interface = nb.dcim.interfaces.get(123)
+        >>> interface.trace.list()
+        [[Ethernet49/1, Ethernet49/1 <> pair-1 (ports 1-2), pair-1 (ports 1-2)],
+        [port-1, port-1 <> port-1, port-1],
+        [pair-1 (ports 1-2), None, None]]
+
+        """
+        return RODetailEndpoint(
+            self,
+            "trace",
+            custom_return={
+                "dcim/cables": Cables,
+                "dcim/interfaces": Interfaces,
+                "dcim/front-ports": FrontPorts,
+                "dcim/rear-ports": RearPorts,
+            },
+        )
+
+class ConsolePorts(Record):
+    device = Devices
+
+    @property
+    def trace(self):
+        """ Represents the ``trace`` detail endpoint.
+
+        Returns a DetailEndpoint object that is the interface for
+        viewing response from the trace endpoint.
+
+        :returns: :py:class:`.DetailEndpoint`
+
+        :Examples:
+
+        >>> interface = nb.dcim.interfaces.get(123)
+        >>> interface.trace.list()
+        [[Ethernet49/1, Ethernet49/1 <> pair-1 (ports 1-2), pair-1 (ports 1-2)],
+        [port-1, port-1 <> port-1, port-1],
+        [pair-1 (ports 1-2), None, None]]
+
+        """
+        return RODetailEndpoint(
+            self,
+            "trace",
+            custom_return={
+                "dcim/cables": Cables,
+                "dcim/interfaces": Interfaces,
+                "dcim/front-ports": FrontPorts,
+                "dcim/rear-ports": RearPorts,
+            },
+        )
+
+class ConsoleServerPorts(Record):
+    device = Devices
+
+    @property
+    def trace(self):
+        """ Represents the ``trace`` detail endpoint.
+
+        Returns a DetailEndpoint object that is the interface for
+        viewing response from the trace endpoint.
+
+        :returns: :py:class:`.DetailEndpoint`
+
+        :Examples:
+
+        >>> interface = nb.dcim.interfaces.get(123)
+        >>> interface.trace.list()
+        [[Ethernet49/1, Ethernet49/1 <> pair-1 (ports 1-2), pair-1 (ports 1-2)],
+        [port-1, port-1 <> port-1, port-1],
+        [pair-1 (ports 1-2), None, None]]
 
         """
         return RODetailEndpoint(
@@ -132,7 +262,6 @@ class FrontPorts(Record):
 
 class RearPorts(Record):
     device = Devices
-
 
 class Racks(Record):
     @property
